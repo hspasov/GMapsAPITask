@@ -18,9 +18,9 @@ WP_HOST=(1) WP_USER=(2) WP_DB=(3) CDO_TOKEN=(4) node insert_locations.js
 
 where:
 
-(1) - location of Wordpress database
+(1) - host of Wordpress database
 
-(2) - database user that has
+(2) - database user that has access to the Wordpress database
 
 (3) - Wordpress database
 
