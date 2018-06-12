@@ -66,10 +66,10 @@ read({
             // API only has information for columns 'address', 'lat' and 'lng'
             // but table 'wp_wpgmza' has 10 other columns with NOT NULL constraint
             // so setting empty strings as values
-            return connection.query(`INSERT INTO wp_wpgmza
-                (map_id, address, lat, lng, description, pic, link, icon, anim, title, infoopen, category, did, other_data)
+            return connection.query(`INSERT INTO locations
+                (address, lat, lng)
             VALUES ?;`,
-                [parsed.results.map(r => [1, r.name, r.latitude.toString(), r.longitude.toString()].concat(Array(10).fill("")))]
+                [parsed.results.map(r => [r.name, r.latitude.toString(), r.longitude.toString()])]
             );
         }).then(() => {
             if (offset + limit < targetCount) {
